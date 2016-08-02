@@ -25,7 +25,7 @@ author:
 version:             2.0.0
 github:
   repo:              https://github.com/poole/poole
-analytics_id:      UA-81820947-1
+analytics_id:        UA-81820947-1
 
 # Gems
 gems:
