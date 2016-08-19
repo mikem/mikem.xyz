@@ -63,6 +63,8 @@ Of course you'd probably use a templating engine to pass the actual endpoint at 
 
 And there you go. As the next step, have your backend pass the data needed to render the initial page so the browser doesn't have to immediately make another round trip to the server for it.
 
+**Note**: this article is written for Elm 0.17.
+
 # References
 
 - [Documentation for the `Program` type](http://package.elm-lang.org/packages/elm-lang/core/4.0.5/Platform#Program)
