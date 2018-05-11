@@ -38,3 +38,17 @@ avconvert \
 This command uses the `PresetAppleM4V720pHD` preset -- you can list the available presets with `avconvert --listPresets`.
 
 And you're done! You have a nice video demonstrating the bug to go along with your report.
+
+_Edit [2018-05-11]:_ if for some reason the `avconvert` command doesn't work for you, here's an `ffmpeg` invocation which achieves the same outcome:
+
+```
+ffmpeg \
+    -i /path/to/source.mov \
+    -codec:v libx264 \
+    -codec:a copy \
+    -crf 20 \ # ¯\_(ツ)_/¯
+    -an \
+    /path/to/converted.mov
+```
+
+These days I use the [screen recording feature](https://support.apple.com/en-sg/HT207935) available since iOS 11 for this purpose.
