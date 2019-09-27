@@ -37,7 +37,7 @@ Expected: 0
   Actual: 1
 
 
-bin/rails test foo_test.rb:4
+ruby foo_test.rb:4
 
 
 
