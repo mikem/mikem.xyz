@@ -26,7 +26,7 @@ url: "https://www.mikem.xyz" # the base hostname & protocol for your site, e.g. 
 twitter_username: mmazur
 github_username:  mikem
 
-google_analytics: UA-81820947-1
+google_analytics_measurement_id: G-9NJE3FYW2H
 
 # Build settings
 markdown: kramdown
