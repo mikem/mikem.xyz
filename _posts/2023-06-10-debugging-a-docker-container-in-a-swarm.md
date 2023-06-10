@@ -3,13 +3,13 @@ layout: post
 title: Debugging a Docker Container in a Swarm
 ---
 
-Let's say you have a container that's being launched by something which reads a [Docker Compose file](https://docs.docker.com/compose/compose-file/). For some reason the container isn't launching correctly, it's crashlooping, which makes it difficult to a) read the logs in time, and b) log in to investigagte.
+Let's say you have a container that's being launched by something which reads a [Docker Compose file](https://docs.docker.com/compose/compose-file/). For some reason, this container is crashlooping when it's launched, which makes it difficult to a) read the logs in time, and b) log in to investigagte.
 
 There are two Compose file attributes for the service which might come in useful:
 
-[command](https://docs.docker.com/compose/compose-file/05-services/#command): this will override the comamnd specified in the Dockerfile. We need something which will not immediately terminate; `tail -f /dev/null` will work nicely.
+[command](https://docs.docker.com/compose/compose-file/05-services/#command): this will override the command specified in the Dockerfile. We need something which will not immediately terminate; `tail -f /dev/null` will do nicely.
 
-[healthcheck](https://docs.docker.com/compose/compose-file/05-services/#healthcheck): if the container has a healthcheck configured, it will restart when the healthcheck timeout expires. Since the container is broken, this is likely going to happen while you're debugging, which can be annoying. Thankfully this can be disabled.
+[healthcheck](https://docs.docker.com/compose/compose-file/05-services/#healthcheck): if the container's Dockerfile has a healthcheck configured, it will restart when the healthcheck timeout expires. Since the container is broken, this is likely going to happen while you're debugging, which can be annoying. Thankfully this can be disabled.
 
 The service definition in the Compose file then looks like this:
 
